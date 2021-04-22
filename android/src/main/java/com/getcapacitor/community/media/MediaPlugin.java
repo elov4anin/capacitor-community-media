@@ -60,7 +60,9 @@ public class MediaPlugin extends Plugin {
 
         String[] projection = new String[]{"DISTINCT " + MediaStore.Images.ImageColumns.BUCKET_DISPLAY_NAME};
         int minSdkVersion = 28;
+        Log.d("android.os.Build.VERSION.SDK_INT", android.os.Build.VERSION.SDK_INT);
         if (android.os.Build.VERSION.SDK_INT > minSdkVersion) {
+            Log.d("fix for 29-30 SDK", 'TRUE');
             projection = new String[] {MediaStore.Images.Media._ID, MediaStore.Images.Media.BUCKET_DISPLAY_NAME, MediaStore.Images.Media.DATE_TAKEN };
         }
         
